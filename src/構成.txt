@@ -1,0 +1,18 @@
+my-app/ ← モノレポルート
+├── spec/ ← TypeSpec (APIの契約) ★共有★
+│ ├── main.tsp
+│ ├── models/ ← 共通の型定義
+│ ├── routes/ ← エンドポイント定義
+│ ├── dist/openapi.yaml ← 生成物（コミット推奨）
+│ └── tspconfig.yaml
+├── client/ ← React TypeScript
+│ ├── src/
+│ │ ├── api/generated/ ← 生成済みAPI（編集禁止）
+│ │ ├── components/
+│ │ └── pages/
+│ └── orval.config.ts
+├── server/ ← Spring Boot
+│ ├── src/main/java/
+│ │ └── generated/api/ ← 生成済みIF（編集禁止）
+│ └── build.gradle
+└── docs/ ← ADR・設計ドキュメント
